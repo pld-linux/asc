@@ -21,8 +21,6 @@ BuildRequires:	libtool
 BuildRequires:	paragui-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 %define		_datadir	/usr/share
 
 %description
