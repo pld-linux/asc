@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Advanced Strategic Command
+Comment=Turn based strategy game
+Comment[pl]=Gra strategiczna z podziałem na tury
+Exec=asc
+Terminal=0
+Type=Application
+# vi: encoding=utf-8
