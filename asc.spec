@@ -11,9 +11,9 @@ Source1:	%{name}.desktop
 Source2:	http://www.asc-hq.org/frontiers.mp3
 # Source2-md5:	560f5783836b309906e57e77417f3864
 Source3:	http://www.asc-hq.org/time_to_strike.mp3
-# Source3-md5:	c383139928613c7b081835c3d4a28fa8
+# Source3-md5:	f0ab3c633f51430af0445ecaa02e3197
 Source4:	http://www.asc-hq.org/machine_wars.mp3
-# Source4-md5:	f0ab3c633f51430af0445ecaa02e3197
+# Source4-md5:	c383139928613c7b081835c3d4a28fa8
 URL:		http://www.asc-hq.org/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
