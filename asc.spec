@@ -6,8 +6,10 @@ Release:	3
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://dl.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
+# Source0-md5:	61aca2f50c851c440c7d76b356d3d28b
 Source1:	%{name}.desktop
 Source2:	%{name}-mp3.tar.bz2
+# Source2-md5:	a310728dc2919cb1f4f6c321c885ae61
 Patch0:		%{name}-ac_fix.patch
 Patch1:		%{name}-am_fix.patch
 URL:		http://www.asc-hq.org/
