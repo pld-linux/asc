@@ -2,7 +2,7 @@ Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
 Version:	1.14.0.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://unc.dl.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
@@ -60,6 +60,8 @@ cp %{SOURCE2} %{SOURCE3} %{SOURCE4} data/music
 #%{__aclocal}
 #%{__automake}
 #%{__autoconf}
+cp -f /usr/share/automake/config.sub .
+
 %configure
 %{__make}
 
