@@ -5,8 +5,6 @@ Version:	1.9.4.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games/Strategy
-Group(de):	X11/Applikationen/Spiele/Strategie
-Group(pl):	X11/Aplikacje/Gry/Strategiczne
 Source0:	http://prdownloads.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
 Source1:	%{name}.desktop
 URL:		http://www.asc-hq.org/
