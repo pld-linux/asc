@@ -5,7 +5,7 @@ Version:	1.10.2
 Release:	3
 License:	GPL
 Group:		X11/Applications/Games/Strategy
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/asc-hq/%{name}-source-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}-mp3.tar.bz2
 Patch0:		%{name}-ac_fix.patch
