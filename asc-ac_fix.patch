@@ -1,0 +1,23 @@
+--- configure.in.orig	Sat Apr 27 18:32:43 2002
++++ configure.in	Mon Aug 12 14:51:55 2002
+@@ -301,17 +301,13 @@
+ 
+ dnl for libtool to work LTLIBOJS is needed (currently bug of autoconf)
+-Xsed="sed -e s/^X//"
+-LTLIBOBJS=`echo X"$LIBOBJS"|[$Xsed -e "s,\.[^.]* ,.lo ,g;s,\.[^.]*$,.lo,"]`
++LTLIBOBJS=`echo "$LIB@&t@OBJS"|sed -e "s,\.[[^.]]* ,.lo ,g;s,\.[[^.]]*$,.lo,"`
+ AC_SUBST(LTLIBOBJS)
+ 
+ AC_OUTPUT( Makefile source/Makefile source/docs/Makefile \
+ 	   source/docs/en/Makefile source/sdl/Makefile \
+ 	   source/libs/triangul/Makefile source/libs/Makefile \
+ 	   source/ai/Makefile source/unix/Makefile doc/manpages/Makefile \
+-      source/Makefile source/docs/Makefile source/clparser/Makefile \
+-      source/docs/en/Makefile source/sdl/Makefile \
+-      source/libs/triangul/Makefile source/libs/Makefile \
+-      source/ai/Makefile source/unix/Makefile \
++     source/clparser/Makefile \
+       source/unix/mapeditor/Makefile source/tools/Makefile \
+ 	   source/tools/lib/Makefile source/tools/linux/Makefile \
+ 	   data/Makefile data/dialog/Makefile data/music/Makefile \
+
