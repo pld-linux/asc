@@ -5,4 +5,5 @@ Comment[pl]=Gra strategiczna z podziałem na tury
 Exec=asc
 Terminal=0
 Type=Application
+Encoding=UTF-8
 # vi: encoding=utf-8
