@@ -21,7 +21,7 @@ BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDLmm-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libsigc++-devel
+BuildRequires:	libsigc++12-devel
 BuildRequires:	libtool
 BuildRequires:	paragui-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
