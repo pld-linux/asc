@@ -7,6 +7,7 @@ License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://prdownloads.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
 Source1:	%{name}.desktop
+Patch0:		%{name}-va_arg_fix.patch
 URL:		http://www.asc-hq.org/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
@@ -31,6 +32,7 @@ pod Windows i Linuksa.
       
 %prep
 %setup -q
+%patch
 
 %build
 aclocal
