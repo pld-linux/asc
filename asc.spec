@@ -1,14 +1,14 @@
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Name:		asc
-# there's 1.9.3 on ftp
-Version:	1.5.15beta
+Version:	1.9.4
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Group(de):	X11/Applikationen/Spiele/Strategie
 Group(pl):	X11/Aplikacje/Gry/Strategiczne
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/asc-hq/develop/%{name}-1.5.15-beta.src.tar.gz
+Source0:	http://prdownloads.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
 Source1:	%{name}.desktop
+Patch0:		%{name}-autoconf.patch
 URL:		http://www.asc-hq.org
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
@@ -22,12 +22,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 
 %prep
-%setup -qn %{name}-1.5.14-beta
+%setup -q
+%patch0 -p1
 
 %build
-CPPFLAGS="-I%{_includedir}"; export CPPFLAGS
-LDFLAGS="-L%{_libdir}"; export CPPFLAGS
-%configure2_13
+aclocal
+automake -a
+autoconf
+%configure CPPFLAGS="-I%{_includedir}" LDFLAGS="-L%{_libdir}"
 %{__make}
 
 %install
