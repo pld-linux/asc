@@ -35,7 +35,7 @@ pod Windows i Linuksa.
 %build
 aclocal
 automake -a
-autoconf
+%{__autoconf}
 %configure CPPFLAGS="-I%{_includedir}" LDFLAGS="-L%{_libdir}"
 %{__make}
 
