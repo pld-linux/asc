@@ -90,4 +90,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_applnkdir}/Games/Strategy/*
 
 %files music
+%defattr(644,root,root,755)
 %{_datadir}/games/asc/music/*
