@@ -45,10 +45,10 @@ Group:		X11/Applications/Games/Strategy
 Requires:	%{name}
 
 %description music
-Music for Advanced Strategic Command in mp3 format.
+Music for Advanced Strategic Command in MP3 format.
 
 %description music -l pl
-Muzyka do Advanced Strategic Command w formacie mp3.
+Muzyka do Advanced Strategic Command w formacie MP3.
 
 %prep
 %setup -q
