@@ -1,18 +1,19 @@
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
-Version:	1.9.4.3
+Version:	1.10.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games/Strategy
-Source0:	http://prdownloads.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
+Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/asc-hq/%{name}-source-%{version}.tar.gz
 Source1:	%{name}.desktop
-Patch0:		%{name}-va_arg_fix.patch
+Patch0:		%{name}-configure.patch
 URL:		http://www.asc-hq.org/
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDLmm-devel
+BuildRequires:	paragui-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,13 +33,14 @@ pod Windows i Linuksa.
       
 %prep
 %setup -q
-%patch
+#%patch -p1
 
 %build
+%{__libtoolize}
 aclocal
-automake -a
+%{__automake}
 %{__autoconf}
-%configure CPPFLAGS="-I%{_includedir}" LDFLAGS="-L%{_libdir}"
+%configure CPPFLAGS="-I%{_includedir}" LDFLAGS="-L%{_libdir}" --disable-paraguitest
 %{__make}
 
 %install
@@ -54,14 +56,12 @@ install doc/manpages/*.6 $RPM_BUILD_ROOT%{_mandir}/man6
 # bug in make install, so we do it here
 install data/*.con $RPM_BUILD_ROOT%{_datadir}/games/asc
 
-gzip -9nf TODO README AUTHORS ChangeLog
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/readme.* doc/graphics doc/*.html doc/*.css
+%doc TODO README AUTHORS ChangeLog doc/readme.* doc/graphics doc/*.html doc/*.css
 %attr(2755,root,games) %{_bindir}/*
 %{_datadir}/games/asc
 %{_applnkdir}/Games/Strategy/*
