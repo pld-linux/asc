@@ -2,7 +2,7 @@ Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
 Version:	1.10.2
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/asc-hq/%{name}-source-%{version}.tar.gz
@@ -15,9 +15,10 @@ BuildRequires:	SDL-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDLmm-devel
-BuildRequires:	paragui-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
+BuildRequires:	paragui-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -35,10 +36,10 @@ w tradycji serii Battle Isle firmy Bluebyte. Obecnie jest dostêpna
 pod Windows i Linuksa.
 
 %package music
-Summary:		Music for Advanced Strategic Command
+Summary:	Music for Advanced Strategic Command
 Summary(pl):	Muzyka do Advanced Strategic Command
-Requires:		%{name}
-Group:			X11/Applications/Games/Strategy
+Group:		X11/Applications/Games/Strategy
+Requires:	%{name}
 
 %description music
 Music for Advanced Strategic Command in mp3 format.
@@ -53,7 +54,7 @@ Muzyka do Advanced Strategic Command w formacie mp3.
 
 %build
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__automake}
 %{__autoconf}
 %configure \
@@ -81,6 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc TODO README AUTHORS ChangeLog doc/graphics doc/*.html doc/*.css
 %attr(2755,root,games) %{_bindir}/*
+%dir %{_datadir}/games/asc
 %{_datadir}/games/asc/*.zip
 %{_datadir}/games/asc/*.con
 %{_applnkdir}/Games/Strategy/*
