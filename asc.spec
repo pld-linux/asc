@@ -5,7 +5,7 @@ Version:	1.14.0.0
 Release:	2
 License:	GPL
 Group:		X11/Applications/Games/Strategy
-Source0:	http://unc.dl.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
 # Source0-md5:	d0863303a7452226fcefafa5a7d31354
 Source1:	%{name}.desktop
 Source2:	http://www.asc-hq.org/frontiers.mp3
@@ -25,8 +25,6 @@ BuildRequires:	libsigc++12-devel
 BuildRequires:	libtool
 BuildRequires:	paragui-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_datadir	/usr/share
 
 %description
 ASC is a turn-based strategy game in the tradition of Battle Isle 2/3.
