@@ -1,12 +1,12 @@
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Name:		asc
-Version:	1.5.14beta
+Version:	1.5.15beta
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Group(de):	X11/Applikationen/Spiele/Strategie
 Group(pl):	X11/Aplikacje/Gry/Strategiczne
-Source0:	ftp://asc-hq.sourceforge.net/pub/asc-hq/develop/%{name}-1.5.14-beta.src.tar.gz
+Source0:	ftp://asc-hq.sourceforge.net/pub/asc-hq/develop/%{name}-1.5.15-beta.src.tar.gz
 Source1:	%{name}.desktop
 URL:		http://www.asc-hq.org
 BuildRequires:	SDL-devel
