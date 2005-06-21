@@ -1,12 +1,16 @@
+# TODO:
+# - check build
+# package probalby Req:  paragui1-devel not paragui-devel
+
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
-Version:	1.14.0.0
-Release:	2
+Version:	1.15.3.0
+Release:	0.1
 License:	GPL
 Group:		X11/Applications/Games/Strategy
 Source0:	http://dl.sourceforge.net/asc-hq/%{name}-source-%{version}.tar.gz
-# Source0-md5:	d0863303a7452226fcefafa5a7d31354
+# Source0-md5:	5b1259915e48dfd9a44d5ac72ceaea6c
 Source1:	%{name}.desktop
 Source2:	http://www.asc-hq.org/frontiers.mp3
 # Source2-md5:	560f5783836b309906e57e77417f3864
@@ -23,7 +27,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libsigc++12-devel
 BuildRequires:	libtool
-BuildRequires:	paragui-devel
+BuildRequires:	paragui-devel >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -60,7 +64,11 @@ cp %{SOURCE2} %{SOURCE3} %{SOURCE4} data/music
 #%{__autoconf}
 cp -f /usr/share/automake/config.sub .
 
+DISPLAY=:0
+export DISPLAY
+
 %configure
+
 %{__make}
 
 %install
