@@ -64,9 +64,6 @@ cp %{SOURCE2} %{SOURCE3} %{SOURCE4} data/music
 #%{__autoconf}
 cp -f /usr/share/automake/config.sub .
 
-DISPLAY=:0
-export DISPLAY
-
 %configure
 
 %{__make}
