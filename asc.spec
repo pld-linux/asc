@@ -3,7 +3,7 @@
 # package probalby Req:  paragui1-devel not paragui-devel
 
 Summary:	Advanced Strategic Command - a free, turn based strategy game
-Summary(pl):	Advanced Strategic Command - turowa gra strategiczna
+Summary(pl.UTF-8):   Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
 Version:	1.15.3.0
 Release:	0.1
@@ -35,21 +35,21 @@ ASC is a turn-based strategy game in the tradition of Battle Isle 2/3.
 It can be played against the computer or against other human players
 (either hotseat or by mail).
 
-%description -l pl
-ASC jest turow± gr± strategiczn± maj±c± korzenie w Battle Isle 2/3.
-Graj±c w ni± mo¿na siê zmierzyæ z komputerem lub z innym cz³owiekiem
-(przy jednym komputerze, lub przez pocztê).
+%description -l pl.UTF-8
+ASC jest turowÄ… grÄ… strategicznÄ… majÄ…cÄ… korzenie w Battle Isle 2/3.
+GrajÄ…c w niÄ… moÅ¼na siÄ™ zmierzyÄ‡ z komputerem lub z innym czÅ‚owiekiem
+(przy jednym komputerze, lub przez pocztÄ™).
 
 %package music
 Summary:	Music for Advanced Strategic Command
-Summary(pl):	Muzyka do Advanced Strategic Command
+Summary(pl.UTF-8):   Muzyka do Advanced Strategic Command
 Group:		X11/Applications/Games/Strategy
 Requires:	%{name}
 
 %description music
 Music for Advanced Strategic Command in MP3 format.
 
-%description music -l pl
+%description music -l pl.UTF-8
 Muzyka do Advanced Strategic Command w formacie MP3.
 
 %prep
