@@ -3,7 +3,7 @@
 # package probalby Req:  paragui1-devel not paragui-devel
 
 Summary:	Advanced Strategic Command - a free, turn based strategy game
-Summary(pl.UTF-8):   Advanced Strategic Command - turowa gra strategiczna
+Summary(pl.UTF-8):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
 Version:	1.15.3.0
 Release:	0.1
@@ -42,7 +42,7 @@ Grając w nią można się zmierzyć z komputerem lub z innym człowiekiem
 
 %package music
 Summary:	Music for Advanced Strategic Command
-Summary(pl.UTF-8):   Muzyka do Advanced Strategic Command
+Summary(pl.UTF-8):	Muzyka do Advanced Strategic Command
 Group:		X11/Applications/Games/Strategy
 Requires:	%{name}
 
