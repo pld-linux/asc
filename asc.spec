@@ -71,6 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/asc_mapedit
 %{_datadir}/games/%{name}
 %{_desktopdir}/%{name}.desktop
-%{_mandir}/man6/%{name}.6.gz
-%{_mandir}/man6/asc_mapedit.6.gz
+%{_mandir}/man6/%{name}.6*
+%{_mandir}/man6/asc_mapedit.6*
 %{_pixmapsdir}/%{name}.xpm
