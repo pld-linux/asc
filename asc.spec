@@ -17,15 +17,19 @@ URL:		http://www.asc-hq.org/
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	SDL_sound-devel
+BuildRequires:	SDL-devel >= 1.2.2
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	boost-regex-devel
+BuildRequires:	bzip2-devel >= 1.0.0
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
 BuildRequires:	libjpeg-devel
+BuildRequires:	libpng-devel
 BuildRequires:	libsigc++12-devel >= 1.2
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:1.5
 BuildRequires:	physfs-devel
+BuildRequires:	pkgconfig
 Obsoletes:	asc-music
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
