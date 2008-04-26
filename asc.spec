@@ -5,12 +5,12 @@
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl.UTF-8):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
-Version:	2.0.1.0
+Version:	2.1.0.0
 Release:	0.1
 License:	GPL v2+
 Group:		X11/Applications/Games/Strategy
 Source0:	http://dl.sourceforge.net/asc-hq/%{name}-%{version}.tar.bz2
-# Source0-md5:	2758e2bbbd5892ccba8d9b4ac5a6d6af
+# Source0-md5:	d76cf500bebdddd8e7d2a094b532e6af
 Source1:	%{name}.desktop
 Source2:	%{name}.xpm
 URL:		http://www.asc-hq.org/
@@ -18,8 +18,8 @@ BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel >= 1.2
 BuildRequires:	SDL_sound-devel
 BuildRequires:	SDL-devel >= 1.2.2
-BuildRequires:	autoconf
-BuildRequires:	automake
+#BuildRequires:	autoconf
+#BuildRequires:	automake
 BuildRequires:	boost-regex-devel
 BuildRequires:	bzip2-devel >= 1.0.0
 BuildRequires:	expat-devel
@@ -27,7 +27,7 @@ BuildRequires:	freetype-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libsigc++12-devel >= 1.2
-BuildRequires:	libtool >= 2:1.5
+#BuildRequires:	libtool >= 2:1.5
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
 Obsoletes:	asc-music
@@ -46,12 +46,14 @@ Grając w nią można się zmierzyć z komputerem lub z innym człowiekiem
 %prep
 %setup -q
 
+# some problems with autotools in this version,
+# probably different versions of one of the build tools
 %build
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
+#%%{__libtoolize}
+#%%{__aclocal}
+#%%{__autoconf}
+#%%{__autoheader}
+#%%{__automake}
 %configure
 %{__make}
 
