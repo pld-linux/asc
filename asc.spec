@@ -20,7 +20,7 @@ BuildRequires:	SDL_sound-devel
 BuildRequires:	SDL-devel >= 1.2.2
 #BuildRequires:	autoconf
 #BuildRequires:	automake
-BuildRequires:	boost-regex-devel
+BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	bzip2-devel >= 1.0.0
 BuildRequires:	expat-devel
 BuildRequires:	freetype-devel
