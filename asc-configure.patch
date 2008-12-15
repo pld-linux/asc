@@ -1,0 +1,15 @@
+--- asc-2.2.0.0/configure.in~	2008-12-13 17:10:54.000000000 +0100
++++ asc-2.2.0.0/configure.in	2008-12-15 10:51:27.000000000 +0100
+@@ -130,12 +130,6 @@
+ 
+ 
+ AC_ARG_ENABLE( serverinterface, AS_HELP_STRING([--enable-serverinterface],[enables usage of the server interface (experimental)]), SERVERINTERFACE=1 )
+-if test "X$SERVERINTERFACE" = "X1"; then
+- LIBCURL_CHECK_CONFIG(yes,7.10.0,,AC_LIB_MISSING( curl, http://curl.haxx.se/libcurl/ ))
+-else
+- LIBCURL=""
+- LIBCURL_CPPFLAGS=""
+-fi
+ 
+ AM_CONDITIONAL( [CURLCLIENT], [test "X$SERVERINTERFACE" = "X1"] )
+ 
