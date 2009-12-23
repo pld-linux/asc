@@ -1,0 +1,11 @@
+--- asc-2.4.0.0/configure.in~	2009-12-23 13:09:38.834537726 +0000
++++ asc-2.4.0.0/configure.in	2009-12-23 13:11:26.601193188 +0000
+@@ -187,7 +187,7 @@
+ fi
+ 
+ 
+-PKG_CHECK_MODULES(LUA, [lua >= 5.1 ],, LUA_MISSING=1 )
++PKG_CHECK_MODULES(LUA, [lua51 >= 5.1 ],, LUA_MISSING=1 )
+ 
+ if test "x$LUA_MISSING" = "x1"; then
+    PKG_CHECK_MODULES(LUA, [lua5.1 >= 5.1 ],, AC_LIB_MISSING( LUA 5.1, http://www.lua.org/ ) )
