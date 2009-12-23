@@ -4,15 +4,16 @@
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl.UTF-8):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
-Version:	2.2.0.0
+Version:	2.4.0.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games/Strategy
-Source0:	http://dl.sourceforge.net/asc-hq/%{name}-%{version}.tar.bz2
-# Source0-md5:	a5207e63109bb81b432542d0b43e9970
+Source0:	http://downloads.sourceforge.net/asc-hq/%{name}-%{version}.tar.bz2
+# Source0-md5:	8c18a7cf84cb53b04527d864301d405d
 Source1:	%{name}.desktop
 Source2:	%{name}.xpm
 Patch0:		%{name}-configure.patch
+Patch1:		%{name}-lua.patch
 URL:		http://www.asc-hq.org/
 BuildRequires:	SDL-devel >= 1.2.2
 BuildRequires:	SDL_image-devel
@@ -29,8 +30,10 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libsigc++12-devel >= 1.2
 BuildRequires:	libtool >= 2:1.5
+BuildRequires:	lua51-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
+BuildRequires:	wxGTK2-unicode-gl-devel
 BuildRequires:	zlib-devel
 Obsoletes:	asc-music
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -41,8 +44,8 @@ It can be played against the computer or against other human players
 (either hotseat or by mail).
 
 %description -l pl.UTF-8
-ASC jest turową grą strategiczną mającą korzenie w Battle Isle
-2/3. Grając w nią można się zmierzyć z komputerem lub z innym
+ASC jest turową grą strategiczną, która posiada korzenie w Battle Isle
+2/3. Grając w nią, można się zmierzyć z komputerem lub z innym
 człowiekiem (przy jednym komputerze, lub przez pocztę).
 
 %package tools
@@ -54,11 +57,12 @@ Group:		X11/Applications/Games/Strategy
 Map editor and other tools for ASC.
 
 %description tools -l pl.UTF-8
-Edytor map i inne narzedzia dla ASC
+Edytor map i inne narzędzia dla ASC.
 
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
@@ -66,7 +70,8 @@ Edytor map i inne narzedzia dla ASC
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--with-wx-config="wx-gtk2-unicode-config"
 %{__make}
 
 %install
