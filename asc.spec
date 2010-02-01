@@ -34,6 +34,8 @@ BuildRequires:	lua51-devel
 BuildRequires:	physfs-devel
 BuildRequires:	pkgconfig
 BuildRequires:	wxGTK2-unicode-gl-devel
+BuildRequires:	xvid-devel
+BuildRequires:	zip
 BuildRequires:	zlib-devel
 Obsoletes:	asc-music
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
