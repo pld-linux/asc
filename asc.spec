@@ -4,12 +4,12 @@
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl.UTF-8):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
-Version:	2.5.0.0
-Release:	15
+Version:	2.6.0.0
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games/Strategy
 Source0:	http://downloads.sourceforge.net/asc-hq/%{name}-%{version}.tar.bz2
-# Source0-md5:	93400834ef6b75343388c1edc772bef9
+# Source0-md5:	3f0002f1d3ccdf447b4721a171ed2ac3
 Source1:	%{name}.desktop
 Source2:	%{name}.xpm
 Patch0:		%{name}-configure.patch
@@ -85,8 +85,8 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
+cp -p %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+cp -p %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -99,6 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/%{name}.desktop
 %{_mandir}/man6/%{name}.6*
 %{_pixmapsdir}/%{name}.xpm
+%{_datadir}/appdata/asc.appdata.xml
 
 %files tools
 %defattr(644,root,root,755)
