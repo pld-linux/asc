@@ -4,16 +4,18 @@
 Summary:	Advanced Strategic Command - a free, turn based strategy game
 Summary(pl.UTF-8):	Advanced Strategic Command - turowa gra strategiczna
 Name:		asc
-Version:	2.6.0.0
-Release:	3
+Version:	2.8.0.2
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Games/Strategy
-Source0:	http://downloads.sourceforge.net/asc-hq/%{name}-%{version}.tar.bz2
-# Source0-md5:	3f0002f1d3ccdf447b4721a171ed2ac3
+#Source0:	https://github.com/ValHaris/asc-hq/archive/ASC%{dashversion}/%{name}-%{version}.tar.gz
+Source0:	http://terdon.asc-hq.org/asc/builds/%{name}-%{version}.tar.bz2
+# Source0-md5:	f2dfaa794a3ba800f4095815be5b8009
 Source1:	%{name}.desktop
 Source2:	%{name}.xpm
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-lua.patch
+Patch2:		gcc10.patch
 URL:		http://www.asc-hq.org/
 BuildRequires:	SDL-devel >= 1.2.2
 BuildRequires:	SDL_image-devel
@@ -64,11 +66,14 @@ Map editor and other tools for ASC.
 Edytor map i inne narzędzia dla ASC.
 
 %prep
-%setup -q
+# upstream tarball is busted, contains 2.8.0.1 dir instead of 2.8.0.2
+%setup -q -n asc-2.8.0.1
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
+export CXXFLAGS="%{rpmcxxflags} -std=c++11 -D__EXPORT__="
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
