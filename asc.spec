@@ -68,9 +68,9 @@ Edytor map i inne narzędzia dla ASC.
 %prep
 # upstream tarball is busted, contains 2.8.0.1 dir instead of 2.8.0.2
 %setup -q -n asc-2.8.0.1
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
 
 %build
 export CXXFLAGS="%{rpmcxxflags} -std=c++11 -D__EXPORT__="
